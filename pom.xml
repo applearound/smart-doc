@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>smart-doc</artifactId>
     <packaging>jar</packaging>
-    <version>3.0.0</version>
+    <version>3.0.0-zyz</version>
 
     <name>smart-doc</name>
     <url>https://github.com/TongchengOpenSource/smart-doc.git</url>
@@ -148,6 +148,21 @@
                     <id>oss01</id>
                     <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
                 </repository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>release-zyz</id>
+            <distributionManagement>
+                <repository>
+                    <id>hw-releases</id>
+                    <name>HW Repository</name>
+                    <url>http://172.20.31.79:8081/repository/maven-releases/</url>
+                </repository>
+                <snapshotRepository>
+                    <id>hw-snapshots</id>
+                    <name>HW Snapshots Repository</name>
+                    <url>http://172.20.31.79:8081/repository/maven-snapshots/</url>
+                </snapshotRepository>
             </distributionManagement>
         </profile>
     </profiles>
