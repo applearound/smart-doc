@@ -101,7 +101,7 @@ public class TornaBuilder {
             }
             api = new Apis();
             api.setName(StringUtils.isBlank(groupApi.getDesc()) ? groupApi.getName() : groupApi.getDesc());
-            api.setAuthor(tornaApi.getAuthor());
+            api.setAuthor("-");
             api.setOrderIndex(groupApi.getOrder());
             api.setIsFolder(TornaConstants.YES);
             api.setItems(apisList);
