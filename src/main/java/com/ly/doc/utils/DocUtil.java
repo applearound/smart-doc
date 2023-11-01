@@ -792,8 +792,29 @@ public class DocUtil {
         if (StringUtil.isEmpty(comment)) {
             return "";
         }
-        return comment.replaceAll("<", "&lt;")
-                .replaceAll(">", "&gt;");
+
+        List<Integer> arr = new ArrayList<>();
+        arr.add(comment.length());
+
+        int nIndex = comment.indexOf("\n");
+        if (nIndex != -1) {
+            arr.add(nIndex);
+        }
+
+        int rnIndex = comment.indexOf("\r\n");
+        if (rnIndex != -1) {
+            arr.add(rnIndex);
+        }
+
+        int rIndex = comment.indexOf("\r");
+        if (rIndex != -1) {
+            arr.add(rIndex);
+        }
+
+        return comment.substring(0, Collections.min(arr))
+                .trim()
+                .replace("<", "&lt;")
+                .replace(">", "&gt;");
     }
 
     /**
