@@ -1122,7 +1122,7 @@ public interface IRestDocTemplate extends IBaseDocBuildTemplate {
         Map<String, String> authorMap = DocUtil.getCommentsByTag(method, DocTags.AUTHOR, cls.getName());
         String authorValue = String.join(", ", new ArrayList<>(authorMap.keySet()));
         if (apiConfig.isShowAuthor() && StringUtil.isNotEmpty(authorValue)) {
-            docJavaMethod.setAuthor(JsonUtil.toPrettyFormat(authorValue));
+            docJavaMethod.setAuthor(authorValue);
         }
         if (apiConfig.isShowAuthor() && StringUtil.isEmpty(authorValue)) {
             docJavaMethod.setAuthor(classAuthor);
